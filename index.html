@@ -4,17 +4,128 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Sprawdzian</title>
+    <script>
+        function buttonclick(){
+        var pagebutton= document.getElementById("obliczenia");
+        pagebutton.click();
+        }
+        function buttonclick(){
+        var pagebutton= document.getElementById("slider");
+        pagebutton.click();
+        }
+        function buttonclick(){
+        var pagebutton= document.getElementById("animacje");
+        pagebutton.click();
+        }
+        function buttonclick(){
+        var pagebutton= document.getElementById("obiekt");
+        pagebutton.click();
+        }
+        function buttonclick(){
+        var pagebutton= document.getElementById("zegar");
+        pagebutton.click();
+        }
+        
+        //slider
+        var i = 0; 
+var zdj = [];
+var time = 2000;
+     
+zdj[0] = "1.jpg";
+zdj[1] = "2.jpg";
+zdj[2] = "3.jpg";
+zdj[3] = "4.jpg";
+zdj[4] = "5.jpg";
+
+function zdjecia()
+{
+    document.slider.src = zdj[i];
+
+    if(i < zdj.length - 1)
+    {
+      i++; 
+    } 
+    else 
+    { 
+        i = 0;
+    }
+    setTimeout("zdjecia()", time);
+}
+window.onload=zdjecia;
+
+        let days = 0;
+let hours = 1;
+let minutes = 0;
+let seconds = 0; 
+
+
+let totalSeconds =
+days * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds;
+
+
+let tempSeconds = totalSeconds;
+
+
+const convert = (value, inSeconds) => {
+if (value > inSeconds) {
+    let x = value % inSeconds;
+    tempSeconds = x;
+    return (value - x) / inSeconds;
+} else {
+    return 0;
+}
+};
+
+
+const setSeconds = (s) => {
+document.querySelector("#seconds").textContent = s + "s";
+};
+
+
+const setMinutes = (m) => {
+document.querySelector("#minutes").textContent = m + "m";
+};
+
+
+const setHours = (h) => {
+document.querySelector("#hours").textContent = h + "h";
+};
+
+
+const setDays = (d) => {
+document.querySelector("#days").textContent = d + "d";
+};
+
+
+var x = setInterval(() => {
+
+if (totalSeconds <= 0) {
+    clearInterval(x);
+}
+setDays(convert(tempSeconds, 24 * 60 * 60));
+setHours(convert(tempSeconds, 60 * 60));
+setMinutes(convert(tempSeconds, 60));
+setSeconds(tempSeconds == 60 ? 59 : tempSeconds);
+totalSeconds--;
+tempSeconds = totalSeconds;
+}, 1000);
+        </script>
 </head>
 <body>
     <div class="menu">
-        <div id="slider"><button type="button">SLIDER</button></div>
-        <div id="animacje"><button type="button">ANIMACJE</button></div>
-        <div id="obliczenia"><button type="button">OBLICZENIA</button></div>
-        <div id="obiekt"><button type="button">OBIEKT</button></div>
-        <div id="zegar"><button type="button">ZEGAR</button></div>
+        <div id="slider"><button type="button" onclick="alert('prezentacja po prawej')">  SLIDER</button></div>
+        <div id="animacje"><button type="button" onclick="alert('tu miały być animacje')">ANIMACJE</button></div>
+        <div id="obliczenia"><button type="button" onclick="alert('obliczenia')">OBLICZENIA</button></div>
+        <div id="obiekt"><button type="button" onclick="alert('tu miał być obiekt')">OBIEKT</button></div>
+        <div id="zegar"><div id="countdown-container">
+            <div id="countdown">
+                <span id="days">0d</span> : <span id="hours">0h</span> :
+                <span id="minutes">0m</span> : <span id="seconds">0s</span>
+            </div>
+        </div></div>
     </div>
     <div class="srodeklewa">LEWO</div>
-    <div class="srodekprawa">PRAWO</div>
+    <div class="srodekprawa"><img name="slider"></div>
     <footer class="stopka">Jakub Warzecha 2CTG</footer>
 </body>
 </html>
