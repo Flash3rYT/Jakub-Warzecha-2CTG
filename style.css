@@ -1,0 +1,92 @@
+.menu
+{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    background-color: plum;
+    color: white;
+    float: left;
+}
+.stopka
+{
+    height: 75px;
+    width: 100%;
+    text-align: center;
+    background-color: plum;
+    color: white;
+    float: left;
+}
+#slider
+{
+    float: left;
+    margin: auto;
+    width: 20%;
+    background-color: tomato;
+    height: 70px;
+    padding-top: 30px;
+}
+#obliczenia
+{
+    float: left;
+    margin: auto;
+    width: 20%;
+    background-color: tomato;
+    height: 70px;
+    padding-top: 30px;
+}
+#obiekt
+{
+    float: left;
+    margin: auto;
+    width: 20%;
+    background-color: skyblue;
+    height: 70px;
+    padding-top: 30px;
+}
+#zegar
+{
+    float: left;
+    margin: auto;
+    width: 20%;
+    background-color: tomato;
+    height: 70px;
+    padding-top: 30px;
+}
+#animacje
+{
+    float: left;
+    margin: auto;
+    width: 20%;
+    background-color: skyblue;
+    height: 70px;
+    padding-top: 30px;
+}
+.srodeklewa
+{
+    float:left;
+    background-color: rgb(140, 0, 255);
+    height: 600px;
+    width: 40%;
+    color: white;
+    text-align: center;
+}
+.srodekprawa
+{
+    float:left;
+    background-color:gold;
+    height: 600px;
+    width: 60%;
+    color: white;
+    text-align: center;
+}
+button
+{
+    background-color:rgb(255, 0, 149); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
